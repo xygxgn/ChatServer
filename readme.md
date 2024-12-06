@@ -24,6 +24,7 @@
   * `cd hiredis`
   * `make`
   * `sudo make install`
+  * `sudo netstat -tanp`
 
 * nginx
   * `cd ~/Documents`
@@ -48,4 +49,9 @@
       }
   }
   ```
+  * `sudo /usr/local/nginx/sbin/nginx`
+  * `sudo /usr/local/nginx/sbin/nginx -s reload`
+  * `sudo /usr/local/nginx/sbin/nginx -s stop`
+  * `kill -s 9 pid`
+  * `sudo netstat -tanp`
 
