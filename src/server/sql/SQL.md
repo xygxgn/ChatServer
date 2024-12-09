@@ -83,8 +83,10 @@
   `SELECT 字段列表 FROM 表名 [WHERE 条件列表] GROUP BY 分组字段名 [HAVING 分组后过滤条件];`
   * WHERE 和 HAVING 的区别: 执行时机 WHERE 在分组之前, HAVING 在分组之后; 判断条件 WHERE 不能对聚合函数判断而 HAVING 可以
   <!-- 排序查询 -->
+  * 排序查询语法
   `SELECT 字段列表 FROM 表名 ORDER BY 字段1 排序方式, 字段2 排序方式2, ...;` 排序方式: 升序 ASC (默认), 降序 DESC
   <!-- 分页查询 -->
+  * 分页查询语法
   `SELECT 字段列表 FROM 表名 LIMIT 起始索引, 查询记录数;`
 
 ### DCL 语句 (用来创建数据库用户, 控制数据库的访问权限)
@@ -219,6 +221,7 @@
   * 右外连接
   `SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件列表;`
   <!-- 自连接(可以是内连接也可以是外连接) -->
+  * 自连接
   `SELECT 字段列表 FROM 表1 别名1 JOIN 表1 别名2 ON 条件列表;`
 
 ### 联合查询
