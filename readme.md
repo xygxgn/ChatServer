@@ -49,9 +49,9 @@
       }
   }
   ```
-  * `sudo /usr/local/nginx/sbin/nginx`
-  * `sudo /usr/local/nginx/sbin/nginx -s reload`
-  * `sudo /usr/local/nginx/sbin/nginx -s stop`
+  * `sudo nginx`
+  * `sudo nginx -s reload`
+  * `sudo nginx -s stop`
   * `kill -s 9 pid`
   * `sudo netstat -tanp`
 
