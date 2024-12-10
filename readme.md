@@ -28,7 +28,7 @@
 
 * nginx
   * `cd ~/Documents`
-  * `wget http://nginx.org/download/nginx-1.20.1.tar.gz `
+  * `wget http://nginx.org/download/nginx-1.20.1.tar.gz`
   * `cd nginx-1.20.1`
   * `./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-stream`
   * `make`
