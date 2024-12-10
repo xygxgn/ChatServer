@@ -28,9 +28,9 @@
 
 * nginx
   * `cd ~/Documents`
-  * `git clone https://github.com/nginx/nginx.git`
-  * `cd nginx`
-  * `./auto/configure --with-stream`
+  * `wget http://nginx.org/download/nginx-1.20.1.tar.gz `
+  * `cd nginx-1.20.1`
+  * `./configure --with-stream`
   * `make`
   * `sudo make install`
   * `sudo gedit /usr/local/nginx/conf/nginx.conf`
@@ -49,9 +49,10 @@
       }
   }
   ```
+  * `sudo nginx -t -c /usr/local/nginx/conf/nginx.conf`
   * `sudo nginx`
   * `sudo nginx -s reload`
   * `sudo nginx -s stop`
-  * `kill -s 9 pid`
+  * `kill pid`
   * `sudo netstat -tanp`
 
