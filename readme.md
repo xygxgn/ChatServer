@@ -25,6 +25,9 @@
   * `make`
   * `sudo make install`
   * `sudo netstat -tanp`
+  * `sudo gedit /etc/ld.so.conf`
+  * add `/usr/local/lib`
+  * `sudo ldconfig`
 
 * nginx
   * `cd ~/Documents`

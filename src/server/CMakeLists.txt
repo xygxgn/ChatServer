@@ -1,8 +1,3 @@
-include_directories(
-  ${PROJECT_SOURCE_DIR}/include
-  ${PROJECT_SOURCE_DIR}/thirdparty
-)
-
 aux_source_directory(./sql SQL_DIR)
 aux_source_directory(./model MODEL_DIR)
 aux_source_directory(./service SERVICE_DIR)
