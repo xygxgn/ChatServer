@@ -5,6 +5,7 @@
 #include "server/model/OfflineMsgModel.hh"
 #include "server/model/FriendModel.hh"
 #include "server/model/GroupModel.hh"
+#include "server/redis/Redis.hh"
 
 #include "json.hpp"
 using json = nlohmann::json;
@@ -35,6 +36,7 @@ public:
     void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
 
     MsgHandler getHandler(int msgid);
+    void handleRedisSubscribeMessage(int userid, std::string msg);
 
     void clientCloseException(const TcpConnectionPtr &conn);
     void reset();
@@ -49,6 +51,8 @@ private:
     OfflineMsgModel offlineMsgModel_;
     FriendModel friendModel_;
     GroupModel groupModel_;
+
+    Redis redis_;
 };
 
 #endif

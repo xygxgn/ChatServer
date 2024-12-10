@@ -39,6 +39,7 @@ bool Redis::connect(std::string ip, int port)
 
 bool Redis::publish(int channel, const std::string &msg)
 {
+    // redisCommand (redisAppendCommand + redisBufferWrite + redisGetReply)
     redisReply *reply = (redisReply*)redisCommand(pubContext_, "PUBLISH %d %s", channel, msg.c_str());
     if (reply == nullptr)
     {
@@ -52,12 +53,14 @@ bool Redis::publish(int channel, const std::string &msg)
 
 bool Redis::subscribe(int channel)
 {
+    // redisAppendCommand
     if (redisAppendCommand(subContext_, "SUBSCRIBE %d", channel) == REDIS_ERR)
     {
         std::cerr << "subscribe command failed!" << std::endl;
         return false;
     }
 
+    // redisBufferWrite
     int done = 0;
     while (!done)
     {
@@ -68,17 +71,21 @@ bool Redis::subscribe(int channel)
         }
     }
     
+    // redisGetReply
+
     return true;
 }
 
-bool Redis::ubsubscribe(int channel)
+bool Redis::unsubscribe(int channel)
 {
+    // redisAppendCommand
     if (redisAppendCommand(subContext_, "UNSUBSCRIBE %d", channel) == REDIS_ERR)
     {
         std::cerr << "unsubscribe command failed!" << std::endl;
         return false;
     }
 
+    // redisBufferWrite
     int done = 0;
     while (!done)
     {
@@ -89,6 +96,8 @@ bool Redis::ubsubscribe(int channel)
         }
     }
     
+    // redisGetReply
+
     return true;
 }
 
