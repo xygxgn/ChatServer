@@ -30,7 +30,7 @@
   * `cd ~/Documents`
   * `wget http://nginx.org/download/nginx-1.20.1.tar.gz `
   * `cd nginx-1.20.1`
-  * `./configure --with-stream`
+  * `./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-stream`
   * `make`
   * `sudo make install`
   * `sudo gedit /usr/local/nginx/conf/nginx.conf`
@@ -49,10 +49,11 @@
       }
   }
   ```
+  * `sudo ln -s /usr/local/nginx/sbin/nginx  /usr/local/bin`
   * `sudo nginx -t -c /usr/local/nginx/conf/nginx.conf`
   * `sudo nginx`
   * `sudo nginx -s reload`
   * `sudo nginx -s stop`
-  * `kill pid`
   * `sudo netstat -tanp`
+  * `kill pid`
 
