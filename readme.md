@@ -24,10 +24,8 @@
   * `cd hiredis`
   * `make`
   * `sudo make install`
-  * `sudo netstat -tanp`
-  * `sudo gedit /etc/ld.so.conf`
-  * add `/usr/local/lib`
   * `sudo ldconfig`
+  * `sudo netstat -tanp`
 
 * nginx
   * `cd ~/Documents`
